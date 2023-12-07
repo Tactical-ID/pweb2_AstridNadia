@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /pweb2/StudiKasusBaru/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^home/?$ index.php?page=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^pasien/?$ views/pasien/index.php?page=$1 [L]
+RewriteRule ^dokter/?$ views/dokter/index.php?page=$1 [L]
+
+RewriteRule ^tambah_pasien/?$ views/pasien/tambah.php?page=$1 [L]
+RewriteRule ^edit_pasien/?$ views/pasien/edit.php
+RewriteRule ^simpan_tambahpas/?$ views/pasien/proses_tambah.php
+RewriteRule ^hapus_pasien/?$ views/pasien/hapus.php
+
+RewriteRule ^tambah_dokter/?$ views/dokter/tambah.php?page=$1 [L]
+RewriteRule ^edit_dokter/?$ views/dokter/edit.php
+RewriteRule ^hapus_dokter/?$ views/dokter/hapus.php
+RewriteRule ^simpan_tambahdoc/?$ views/dokter/proses_tambah.php?page=$1 [L]
